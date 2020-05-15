@@ -68,5 +68,77 @@ namespace BasicMathOperations1
             txtNumber1.Focus();
             txtNumber1.SelectAll();
         }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            int number1, number2;
+            try
+            {
+                number1 = Convert.ToInt32(txtNumber1.Text);
+                number2 = Convert.ToInt32(txtNumber2.Text);
+                lblResult.Text = Convert.ToString(number1 * number2);
+                lblResultType.Text = "Produkt";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Eingabefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
+        private void lblNumber1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            int number1, number2;
+            try
+            {
+                number1 = Convert.ToInt32(txtNumber1.Text);
+                number2 = Convert.ToInt32(txtNumber2.Text);
+                lblResult.Text = Convert.ToString(number1 - number2);
+                lblResultType.Text = "Differenz";
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Eingabefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            double number1, number2, result;
+            try
+            {
+                number1 = Convert.ToInt32(txtNumber1.Text);
+                number2 = Convert.ToInt32(txtNumber2.Text);
+
+                if(number2 == 0)
+                {
+                    lblResultType.Text = "Fehler";
+                    MessageBox.Show("Division durch 0", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    result = (double)number1 / number2;
+                    lblResult.Text = Convert.ToString(result);
+                    lblResultType.Text = " Quotient";
+                }
+
+                lblResult.Text = Convert.ToString(number1 / number2);
+                lblResultType.Text = "Quotient";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Eingabefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
     }
 }
