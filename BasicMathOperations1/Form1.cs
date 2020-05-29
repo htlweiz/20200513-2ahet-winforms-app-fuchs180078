@@ -140,5 +140,42 @@ namespace BasicMathOperations1
                 txtNumber1.SelectAll();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int number1, number2;
+            try
+            {
+                number1 = Convert.ToInt32(txtNumber1.Text);
+                number2 = Convert.ToInt32(txtNumber2.Text);
+                lblResult.Text = Convert.ToString(Math.Pow(number1,number2));
+                lblResultType.Text = "Ergebnis";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Eingabefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
+
+        private void btnwurzel_Click(object sender, EventArgs e)
+        {
+            int number1, number2;
+            try
+            {
+                number1 = Convert.ToInt32(txtNumber1.Text);
+                number2 = Convert.ToInt32(txtNumber2.Text);
+                number2 = 1 / number2;
+                lblResult.Text = Convert.ToString(Math.Pow(number1, number2));
+                lblResultType.Text = "Ergebnis";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Eingabefehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNumber1.Focus();
+                txtNumber1.SelectAll();
+            }
+        }
     }
 }
